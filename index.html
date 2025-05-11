@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Right to Better Life Initiative</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4A148C;      /* deep purple */
+      --secondary: #FFC107;    /* amber accent */
+      --bg-light: #FAFAFA;
+      --text-dark: #212121;
+      --text-light: #FFFFFF;
+      --section-padding: 4rem 2rem;
+    }
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      line-height: 1.6;
+      width: 100%;
+      
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      display: flex; justify-content: flex-start;
+      padding: 1rem 2rem;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    nav a {
+      color: var(--secondary);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color .3s;
+    }
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: url('images/hero.jpg') center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; text-align: center;
+    }
+    .hero::after {
+      content:'';
+      position:absolute; inset:0;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      color: var(--text-light);
+      max-width: 90%; margin: auto;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem; margin-bottom: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .hero-content p {
+      font-size: 1.2rem; margin-bottom: 2rem;
+    }
+    .hero-content .btn {
+      display: inline-block;
+      padding: .75rem 1.5rem;
+      background: var(--secondary);
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: opacity .3s;
+    }
+    .hero-content .btn:hover {
+      opacity: .8;
+    }
+
+    /* SECTION TITLES */
+    h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+      color: var(--primary);
+    }
+    h2::after {
+      content: '';
+      position: absolute; left: 0; bottom: -8px;
+      width: 50px; height: 4px;
+      background: var(--secondary);
+    }
+
+    /* CONTENT SECTIONS */
+    section {
+      
+      padding: var(--section-padding);
+      /* max-width: 1000px; */
+      margin: auto;
+    }
+
+    #mission p,
+    #objectives ul {
+      margin-top: 1rem;
+    }
+    #objectives ul li {
+      margin-bottom: .5rem;
+      padding-left: 1.2rem;
+      list-style: disc;
+    }
+
+    /* GALLERY */
+    #gallery, #mission, #objectives{
+        max-width: 1000px;
+        margin: auto;
+    }
+    .gallery-item {
+      background: #ddd;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .3s;
+    }
+    .gallery-item:hover {
+      transform: scale(1.01);
+    }
+    .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    }
+
+    /* Perfect square */
+    .gallery-item.square {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #ddd;
+    }
+
+    /* Tall rectangle: height = 2× width */
+    .gallery-item.rectangle {
+    width: 100%;
+    aspect-ratio: 1 / 2;    /* width / height = 1/2 → height = 2× width */
+    grid-row: span 2;       /* spans two implicit rows */
+    background: #bbb;
+    }
+
+
+    /* CONTACT */
+    .contact {
+      
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 3rem 2rem;
+      text-align: center;
+      width: 100%;
+      /* border: 3px solid black; */
+    }
+    .contact p {
+      margin: .5rem 0;
+      font-weight: 300;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #777;
+      text-align: center;
+      padding: 1rem;
+      font-size: .85rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.5rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid > * { grid-column: span 2 !important; grid-row: auto !important; }
+      nav { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#top">Home</a>
+  </nav>
+
+  <!-- Hero -->
+  <div id="top" class="hero">
+    <div class="hero-content">
+      <h1>Right to Better Life Initiative</h1>
+      <p>Advocating for Women Empowerment through social, educational, and economic programs.</p>
+      <a href="#mission" class="btn">Learn More</a>
+    </div>
+  </div>
+
+  <!-- Mission -->
+  <section id="mission">
+    <h2>Mission Statement</h2>
+    <p>Our mission is to uplift and empower women and children in underserved communities, ensuring they know and can exercise their right to a better life.</p>
+  </section>
+
+  <!-- Objectives -->
+  <section id="objectives">
+    <h2>Aims &amp; Objectives</h2>
+    <ul>
+      <li>To help vulnerable women and children by empowering them with knowledge of their rights.</li>
+      <li>Placeholder objective 2: </li>
+      <li>Placeholder objective 3:</li>
+      <!-- Add more as needed -->
+    </ul>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <!-- Block #1 -->
+      <div class="gallery-item rectangle"><img src="images/rectangles/img_1.jpg" width="100%"></div>
+      <div class="gallery-item square"><img src="images/squares/img_1.jpg" width="100%" alt=""></div>
+      <div class="gallery-item square"><img src="images/squares/img_2.jpg" width="100%" alt=""></div>
+      <div class="gallery-item square"><img src="images/squares/img_3.jpg" width="100%" alt=""></div>
+      <div class="gallery-item square"><img src="images/squares/img_4.jpg" width="100%" alt=""></div>
+  
+      <!-- Block #2 -->
+      <div class="gallery-item rectangle"><img src="images/rectangles/img_2.jpg" width="100%" alt=""></div>
+      <div class="gallery-item square"><img src="images/squares/img_5.jpg" width="100%" alt=""></div>
+      <div class="gallery-item square"><img src="images/squares/img_6.jpg" width="100%" alt=""></div>
+      <div class="gallery-item square"><img src="images/squares/img_7.jpg" width="100%" alt=""></div>
+      <div class="gallery-item square"><img src="images/squares/img_8.jpg" width="100%" alt=""></div>
+  
+      <!-- Repeat as many blocks as you like -->
+    </div>
+  </section>
+  
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h3>Contact Us</h3>
+    <p>123 Empowerment Street, Cityville</p>
+    <p>Phone: +234 (701) 567-8901</p>
+    <p>Email: info@righttobetterlife.org</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Right to Better Life Initiative. All rights reserved.
+  </footer>
+
+</body>
+</html>
